@@ -9,17 +9,17 @@ namespace prjKpopIndexers
     public class Groups
     {
         public int numOfMembers, numSongs;
-        private double salary;
-        private string groupName, gender;
+       
+        private string groupName, gender,popSong;
 
-        public Groups(string groupName, string gender, int numOfMembers, int numSongs, double salary)
+        public Groups(string groupName, string gender, int numOfMembers, int numSongs, string popSong)
         {
 
             this.groupName = groupName;
             this.gender = gender;
             this.numOfMembers = numOfMembers;
             this.numSongs = numSongs;
-            this.salary = salary;
+            this.popSong = popSong;
 
 
         }
@@ -46,7 +46,7 @@ namespace prjKpopIndexers
 
                 else if (index == 4)
 
-                    return this.salary;
+                    return this.popSong;
                 return null;
             }
             set
@@ -60,7 +60,7 @@ namespace prjKpopIndexers
                 else if (index == 3)
                     this.numSongs = (int)value;
                 else if (index == 4)
-                    this.salary = (double)value;
+                    this.popSong = (string)value;
             }
 
         }
@@ -77,8 +77,8 @@ namespace prjKpopIndexers
                     return this.numOfMembers;
                 else if (attrName.ToLower().Equals("songs"))
                     return this.numSongs;
-                else if (attrName.ToLower().Equals("salary"))
-                    return this.salary;
+                else if (attrName.ToLower().Equals("popularSong"))
+                    return this.popSong;
                 return null;
                 //looks at attribute name, converted to lowe case and returns matching value
             }
@@ -92,8 +92,8 @@ namespace prjKpopIndexers
                     this.numOfMembers = (int)value;
                 else if (attrName.ToLower().Equals("songs"))
                     this.numSongs = (int)value;
-                else if (attrName.ToLower().Equals("salary"))
-                    this.salary = (double)value;
+                else if (attrName.ToLower().Equals("popularSong"))
+                    this.popSong = (string)value;
             }
         }
     }
